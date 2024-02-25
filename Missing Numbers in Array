@@ -1,1 +1,23 @@
+ Missing Numbers in Array
+=======================================================================
+1] The Problem States that we need to determine a missing number from a series [0,1,2,3,4...n] of length 'n'
 
+Solution:
+===========
+let's agree on the fact that a series 0,1,2,3....n has lenth n+1 (numbers from 1 to n and a zero), So if we are given a series  of length n, a number from the series is missing
+for sure.
+The approch is a follows
+  1) We'll calculate  the sum of all numbers in a series of length n+1.
+  2) We'll subtract all the numbers in the given series from the calculated sum.
+  3) The remaining number after we subtract all the number from the input is the missing number.
+
+=========================================================================================================================================
+
+    var missingNumber = function(nums){
+      const length = nums.length;
+      let sum = ((length + 1) * length)/2;
+      for (let i=0; i<length; i++){
+      sum = sum - nums[i];
+  }
+return sum;
+}
